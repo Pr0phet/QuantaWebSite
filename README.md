@@ -137,7 +137,6 @@ HTML:
 |author|string|作者|
 |date|string|日期|
 |cover|object|封面信息|
-|exist|boolean|是否存在（当为false时，其他内容其他内容可以没有）|
 |src|string|图片地址|
 
 - 响应示例：
@@ -150,10 +149,7 @@ HTML:
             "title": "Quanta第十二届管理层换届公告",
             "author": "OldFe",
             "date": "2017/06/24",
-            "cover": {
-                "exist": true,
-                "src": "../img/picture.jpg"
-            }
+            "cover": "../img/picture.jpg",
         }]
     }
 }
@@ -185,12 +181,8 @@ HTML:
 |author|string|作者|
 |date|string|日期|
 |cover|object|封面信息|
-|exist|boolean|是否存在（当为false时，其他内容其他内容可以没有）|
 |src|string|图片地址|
-|content|array(object)|内容列表|
-|type|string|类型（包含段落（paragraph）、一张图片（one-image）、两张图片（two-image））
-|text|string|文本内容|
-|srcs|array(string)|图片地址列表|
+|content|string|内容|
 
 - 响应示例：
 ```
@@ -201,23 +193,8 @@ HTML:
         "title": "Quanta第十二届管理层换届公告",
         "author": "OldFe",
         "date": "2017/06/24",
-        "cover": {
-            "exist": true,
-            "src": "../img/picture.jpg"
-        },
-        "content": [{
-            "type": "paragraph",
-            "text": "Quanta（量子）信息技术服务中心是广东外语外贸大学的最大的IT团体"
-        }, {
-            "type": "one-image",
-            "src": "../img/picture.jpg"
-        }, {
-            "type": "two-image",
-            "srcs": [
-                "../img/picture.jpg",
-                "../img/picture.jpg"
-            ]
-        }]
+        "cover": "../img/picture.jpg",
+        "content": "htmlstring"
     }
 }
 ```
@@ -303,9 +280,7 @@ HTML:
 |profile|string|项目简介|
 |tools|string|工具|
 |date|string|日期|
-|website|object|网站信息|
-|exist|boolean|是否存在|
-|link|string|地址|
+|website|string|地址|
 |developers|array(object)|开发人员|
 |post|string|职位|
 
@@ -337,10 +312,7 @@ HTML:
                 "name": "曾**",
                 "post": "后台工程师"
             }],
-            "website": {
-                "exist": true,
-                "link": "https://www.baidu.com"
-            }
+            "website": "https://www.baidu.com"
         }, {
             "type": "android",
             "name": "艺术+",
@@ -354,9 +326,7 @@ HTML:
                 "name": "曾**",
                 "post": "后台工程师"
             }],
-            "website": {
-                "exist": false
-            }
+            "website": ""
         }]
     }
 }
@@ -419,9 +389,8 @@ HTML:
 |session|object|届份|
 |current|boolean|是否为当届成员|
 |content|string|内容|
-|series|object|年级|
-|exist|boolean|是否存在|
-|major|object|专业|
+|series|string|年级|
+|major|string|专业|
 
 - 响应示例：
 ```
@@ -438,14 +407,8 @@ HTML:
                     "current": true,
                     "content": "12"
                 },
-                "series": {
-                    "exist": true,
-                    "content": "2015"
-                },
-                "major": {
-                    "exist": true,
-                    "content": "软件工程"
-                }
+                "series": "2015",
+                "major": "软件工程",
             }]
         }, {
             "type": "运营部",
@@ -457,14 +420,8 @@ HTML:
                     "current": true,
                     "content": "12"
                 },
-                "series": {
-                    "exist": true,
-                    "content": "2015"
-                },
-                "major": {
-                    "exist": true,
-                    "content": "软件工程"
-                }
+                "series": "2015",
+                "major": "软件工程",
             }]
         }, {
             "type": "设计部",
@@ -476,14 +433,8 @@ HTML:
                     "current": true,
                     "content": "12"
                 },
-                "series": {
-                    "exist": true,
-                    "content": "2015"
-                },
-                "major": {
-                    "exist": true,
-                    "content": "软件工程"
-                }
+                "series" : "2015",
+                "major": "软件工程",
             }]
         }, {
             "type": "研发部",
@@ -495,14 +446,8 @@ HTML:
                     "current": true,
                     "content": "12"
                 },
-                "series": {
-                    "exist": true,
-                    "content": "2015"
-                },
-                "major": {
-                    "exist": true,
-                    "content": "软件工程"
-                }
+                "series": "2015",
+                "major":  "软件工程",
             }]
         }]
     }
